@@ -1,16 +1,1 @@
-{
-  "users": [
-    {
-      "id": 86390909,
-      "firstName": "Robb",
-      "lastName": "Wolf",
-      "email": "Stanford97@hotmail.com"
-    },
-    {
-      "id": 22879844,
-      "firstName": "Rosie",
-      "lastName": "Nolan",
-      "email": "Eda_Lebsack49@gmail.com"
-    }
-  ]
-}
+{"users":[{"id":79169078,"firstName":"Eden","lastName":"Fritsch","email":"Dolores70@gmail.com"},{"id":13070810,"firstName":"Neva","lastName":"Wehner","email":"Rupert_Reinger73@gmail.com"},{"id":92507466,"firstName":"Raul","lastName":"Hansen","email":"Makenzie71@gmail.com"},{"id":5180985,"firstName":"Nicholaus","lastName":"Koepp","email":"Mariana_Lehner@hotmail.com"}]}
