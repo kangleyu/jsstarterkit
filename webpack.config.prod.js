@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 
 export default {
   debug: true,
@@ -11,7 +12,7 @@ export default {
     ]
   },
   entry: [
-    path.resolve(__dirname, 'dist/index')
+    path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
   output: {
@@ -22,7 +23,12 @@ export default {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
   },
-  plugins: [],
+  plugins: [
+    // Elimiate duplicate packages when generating bundle
+    new webpack.optimize.DedupePlugin(),
+    // Minify js
+    new webpack.optimize.UgligyJsPlugin()
+  ],
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
