@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
@@ -13,7 +13,10 @@
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "repository": {
     "type": "git",
@@ -41,6 +44,8 @@
     "express": "4.14.0",
     "html-webpack-plugin": "2.22.0",
     "jsdom": "9.4.2",
+    "json-schema-faker": "^0.4.0",
+    "json-server": "^0.9.5",
     "localtunnel": "1.8.1",
     "mocha": "3.0.2",
     "nock": "8.0.0",
@@ -52,10 +57,11 @@
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.12.2",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-md5-hash": "0.0.5",
+    "whatwg-fetch": "2.0.2"
   },
   "dependencies": {
-    "css-loader": "^0.26.2",
-    "style-loader": "^0.13.2"
+    "css-loader": "0.26.2",
+    "style-loader": "0.13.2"
   }
 }
