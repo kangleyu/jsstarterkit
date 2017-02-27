@@ -1,7 +1,7 @@
 /** Define the api base url configuration */
 export default function getBaseUrl() {
   // Use query string useMockApi as a switcher for using mock api data
-  return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : '/';
+  return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : 'https://intense-wildwood-93561.herokuapp.com/';
 }
 
 function getQueryStringParameterByName(name, url) {

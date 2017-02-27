@@ -16,12 +16,12 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
-app.get("/users", function(req, res) {
-  // hard codign for simplicity. pretend this hits a real database
-  res.json([
-    {"id":1, "firstName":"Bob","lastName":"Smith","email":"bob@gmail.com"}
-  ]);
-});
+// app.get("/users", function(req, res) {
+//   // hard codign for simplicity. pretend this hits a real database
+//   res.json([
+//     {"id":1, "firstName":"Bob","lastName":"Smith","email":"bob@gmail.com"}
+//   ]);
+// });
 
 app.listen(port, function(err) {
   if (err) {
